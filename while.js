@@ -4,12 +4,12 @@ function conteoDecreciente() {
 
   while (numero >= 40) {
     console.log("numero " + numero);
-    suma = suma + numero;
+    
 
     --numero;
   }
 
-  console.log("suma " +suma);
+
 }
 
 function contadorX2() {
@@ -17,14 +17,15 @@ function contadorX2() {
     console.log(i * 2);
   }
 }
+
 function suma() {
   var suma = 0;
-  /*0 al 99 los primeros 100*/
-  for (var index = 0; index < 100; index++) {
-    suma = suma + index;
+  
+  for (var index = 1; index <=100; index++) {
+    suma += index;
   }
 
-  console.log(suma);
+   return suma;
 }
 
 function factorial(numero) {
@@ -32,31 +33,29 @@ function factorial(numero) {
   if(numero>0&&numero<11){
   var multi = 1;
   while (numero != 1) {
-    multi = multi * numero;
+    multi *=numero;
     --numero;
 
   }
 
-  return multi }else{
-   return  "el numero no esta entre 1 a 10 "
-  }
+  return multi; }
 
 
 }
 
 function serie(n) {
-  var series = 0.0;
+  var series = 0;
   for (var i = 1; i <= n; i++) {
-    series = series + 1.0 / i;
+    series = series + 1/ i;
 
-    console.log("hola " + 1 / i);
+  
   }
   return series;
 }
 
 
 
-function fionachi(n){
+function fionacci(n){
 
     var  num1 = 0, num2 = 1, suma = 1;
  
@@ -83,19 +82,21 @@ function fionachi(n){
 
 function notas (n1,n2,n3,n4,n5){
 
-let array=[n1,n2,n3,n4,n5]
+let array=[n1,n2,n3,n4,n5];
+let a=new Array();
 
 for(let i=0;i<array.length;i++){
 
-  if(array[i]>3.0){
+  if(array[i]>3){
 
-    console.log("la notas mayores de 3 fueron "+array[i])
+    
+    a.unshift(array[i])
+
   }
-
-
-     
+       
 
 }
+return a;
 
 }
 
@@ -105,18 +106,13 @@ if(numero>=0){
 
   var multi = 1;
   while (numero != 1) {
-    multi = multi * numero;
+    multi *=numero;
     --numero;
 
   }
 
-  return multi 
+  return multi ;
 
-}else{
-
-
-
-  return "No es positivo "
 }
 
 
@@ -125,8 +121,11 @@ if(numero>=0){
 
 function pares(inicio,fin){
 
-  let a=0
-  let b=0
+  let a=0;
+  let b=0;
+  
+  let palabra=" ";
+  
 if(inicio<=fin){
 
   a=inicio
@@ -140,25 +139,23 @@ for(let i=a;i<=b;i++){
 
 
   if(i%2==0){
-console.log("pares "+i)
-
+  
+  palabra=palabra+i+", "
   }
 }
+
+return palabra;
 }
 
-function ahorro(){
 
-
-
-
-}
 
 
 
 //console.log(fionachi(10))
-console.log(notas(4.2,3.7,4,2.0,2))
+//console.log(notas(4.2,3.7,4,2.0,2))
 //console.log("factorial de  11 "+factorial(11))
-//console.log(factorial2(-6))
+//console.log(factorial2(5))
 //console.log(conteoDecreciente())
 //console.log(pares(100,50))
+//console.log(suma())
 
