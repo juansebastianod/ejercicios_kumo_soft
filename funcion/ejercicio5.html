@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cambio</title>
+</head>
+<body>
+
+    <Script type="text/javascript">
+
+     let Celsius=prompt("a cuantos grados Celsius estas ");
+     let cambiar=prompt("por cual la quieres cambiar"+"\n"+"1.Fahrenheit"+"\n"+"2.Kelvin");
+
+     function cambio(Celsius,cambiar){
+        let variable=0;
+        if(cambiar==1){variable=(9*Celsius)/5+32;}
+        if(cambiar==2){variable=Celsius+273.15;}
+
+       return variable;
+
+     }
+
+
+     if(cambiar==1){document.write("de celsius a Fahrenheit es: "+cambio(Celsius,cambiar))}
+     if(cambiar==2){document.write("de celsius a Kelvin es: "+cambio(+Celsius,cambiar))}
+     
+    </Script>
+    
+</body>
+</html>

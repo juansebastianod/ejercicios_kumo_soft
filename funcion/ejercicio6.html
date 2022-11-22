@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabla de multiplicar </title>
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+      
+      let numero=prompt("numero que quieres crear la tabla")
+
+
+
+      function tabla(numero){
+       
+        let multi="";
+        let operacion=0;
+
+        for(i=1;i<=20;i++){
+          operacion=numero*i;
+
+          multi=`${multi}${numero}*${i}=${operacion}\n`;
+
+
+        }
+
+
+        return multi;
+
+
+
+
+      }
+
+
+      document.write(tabla(numero))
+
+      
+
+
+    </script>
+</body>
+</html>

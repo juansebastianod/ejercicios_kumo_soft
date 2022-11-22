@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opcion</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+     
+     let opcion=prompt("1.Suma"+"\n"+"2.Resta"+"\n"+"3.Multiplicacion"+"\n"+"4.Divicio");
+     let num=prompt("numero1");
+     let num2=prompt("numero2");
+     
+    
+     
+     
+     function escoje(a,num,num2){
+
+        let operation=0;
+      
+       if(a==1){operation=num+num2}
+       if(a==2){operation=num-num2}
+       if(a==3){operation=num*num2}
+       if(a==4){operation=num/num2}
+      
+
+       return operation;
+
+      
+     }
+       if(opcion==1){document.write("la operacion de "+num+"+"+num2+"="+escoje(opcion,+num,+num2))}
+       if(opcion==2){document.write("la operacion de "+num+"-"+num2+"="+escoje(opcion,num,num2))}
+       if(opcion==3){document.write("la operacion de "+num+"*"+num2+"="+escoje(opcion,num,num2))}
+       if(opcion==4){document.write("la operacion de "+num+"/"+num2+"="+escoje(opcion,num,num2))}
+      
+     
+    </script>
+
+
+    
+</body>
+</html>
