@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>estudiantes</title>
+  </head>
+
+  <body>
+    <script>
+      function estudiante(edad, nombre) {
+        this.edad = edad;
+        this.nombre = nombre;
+      }
+      let nombre = "";
+      let edad = "";
+
+      let arr = new Array();
+
+      do {
+        nombre = prompt("nombre del estudiante");
+        if (nombre != "*") {
+          edad = prompt("edad del estudiante");
+          arr.push(new estudiante(edad, nombre));
+        }
+      } while (nombre != "*");
+
+
+      document.write("Nombre de los mayores ")
+      
+      arr.map((x) => (x.edad > 18?document.write(x.nombre+", "):false))
+       
+     
+      document.write("La edad mayor con su nombre ")
+      let max=0;
+
+      arr.map((y) => (y.edad>max?max=y.edad:false))
+      arr.map((y) => (y.edad==max?document.write(y.nombre+", "):false))
+      
+    </script>
+  </body>
+</html>

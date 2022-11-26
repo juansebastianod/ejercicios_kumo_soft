@@ -179,13 +179,14 @@ if(operacion==0){
 
 function invertir(n){
 n=n.toFixed();
+
 if(n<10){
 
   return n 
 }
 
-if(n%10==5)
-return (n%10)+invertir(n/10)
+
+return (n%10)+invertir(+n/10)
 
 
 
@@ -199,4 +200,4 @@ return (n%10)+invertir(n/10)
 //console.log(fibonacciRecursion(8))
 //console.log(conteo(10))
 //console.log(binario(842))
-console.log(invertir(125663))
+console.log(invertir(1281))
