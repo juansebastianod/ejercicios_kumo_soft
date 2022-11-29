@@ -133,17 +133,12 @@ function sumarFilasYColumnas(matriz) {
     suma_coml.push(suma);
     suma = 0;
   }
-  let filas = "filas" + "\n";
-  let columna = "columnas" + "\n";
 
-  suma_fila.map(function (element) {
-    filas = filas + element + "\n";
-  });
+  let arr3=suma_fila.concat(suma_coml);
+  
 
-  suma_coml.map(function (element) {
-    columna = columna + element + "\n";
-  });
-  return filas + columna;
+
+  return arr3;
 
 }
 
@@ -156,5 +151,7 @@ function multiplo(tamano, multiplo) {
 
   return arr;
 }
+
+
 
 
