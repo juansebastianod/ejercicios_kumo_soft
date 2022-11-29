@@ -1,3 +1,8 @@
+function sumatoria(array) {
+  let suma = array.reduce((accumulator, current) => accumulator + current);
+  return suma;
+}
+
 function implimir() {
   let array = [5, 6, 3, 2, 4];
   let unir = "";
@@ -12,7 +17,7 @@ function implimir() {
 function media() {
   let array = [5, 6, 3, 2, 4, 3, 6, 3, 1, 9];
 
-  const suma = array.reduce((accumulator, current) => accumulator + current);
+  const suma = sumatoria(array);
 
   return suma / array.length;
 }
@@ -20,40 +25,25 @@ function media() {
 function buscarIndice(a) {
   let array = [5, 6, 3, 2, 4, 3, 6, 3, 1, 9];
 
-  let indice = " ";
-  let suma = 0;
+  const incidencias = (element) => element == a;
 
-  for (let i = 0; i < array.length; i++) {
-    suma = array.indexOf(a);
-    if (suma != -1) {
-      indice += suma + " ";
-    }
-
-    array[suma] = a + 1;
-  }
+  let indice = array.findIndex(incidencias);
 
   return indice;
 }
 
+var aray = Array();
+
+for (let i = 0; i < 10; i++) {
+  aray.push(Math.floor(Math.random() * 20));
+}
+
 function notas(array) {
-  let aprobado = Array();
-  let desaprobado = Array();
-  let nota = 0;
+  let aprobado = array.filter((x) => x >= 10);
+  let desaprobado = array.filter((y) => y < 10);
 
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] > 10) {
-      aprobado.push(array[i]);
-    } else {
-      desaprobado.push(aray[i]);
-    }
-  }
-
-  promedioA =
-    aprobado.reduce((accumulator, current) => accumulator + current) /
-    aprobado.length;
-  promedioB =
-    desaprobado.reduce((accumulator, current) => accumulator + current) /
-    desaprobado.length;
+  promedioA = sumatoria(aprobado) / aprobado.length;
+  promedioB = sumatoria(desaprobado) / desaprobado.length;
 
   let msj =
     "el promediode aprobado es " +
@@ -68,43 +58,12 @@ function notas(array) {
   return msj;
 }
 
-function mayorMenor(aray){
+let a = [2, 5, 2, 4, 1];
 
-aray.sort(function(a,b){return a - b;})
-console.log("soy el array  nuevo "+aray)
-let entero=aray.length-1/2
-let medio=0;
-entero=Math.round(entero,1)
+function mayorMenor(a) {
+  a.sort();
 
-if(aray.length%2!=0){
-
-     medio=([aray.length/2]+[(aray.length/2)+1]);
-
-}else{
-
-
-    medio=aray[entero];
-}
-
-
-
-
-
-
-let msj="el mayor es "+aray[aray.length-1]+", el menor es "+aray[0]+" y el valor medio "+medio;
-
-
-return msj;
-
-}
-
-function mayorMenor(array) {
-  array.sort();
-
-  suma = array.reduce(
-    (accumulator, currentValue) => accumulator + currentValue
-  );
-  array.length;
+  let media = sumatoria(a) / a.length;
 
   let mjs =
     "numero menor " +
@@ -112,7 +71,7 @@ function mayorMenor(array) {
     " numero mayor " +
     array[array.length - 1] +
     " promedio " +
-    suma;
+    media;
   return mjs;
 }
 
@@ -141,40 +100,39 @@ function valorMedio(tamano) {
       arr.push(Math.floor(Math.random() * 100));
     }
 
-    console.log(arr);
-
     return arr[(arr.length - 1) / 2];
   }
 
   return "el tamaño es par";
 }
 
+
+let matriz = [
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 6],
+  [1, 2, 3, 4, 5],
+  [1, 2, 3, 4, 5],
+];
+
 function sumarFilasYColumnas(matriz) {
-  let suma = 0;
-  let suma_fila = Array();
-  let suma_coml = Array();
-  let i = 0;
-  let j = 0;
+  let suma_fila = Array(5);
+  let suma_coml = Array(5);
+  let suma=0;
 
-  for (i = 0; i < matriz.length; i++) {
-    for (j = 0; j < matriz[0].length; j++) {
-      suma = suma + matriz[i][j];
-    }
-
-    suma_fila.push(suma);
-    suma = 0;
+  for (let i = 0; i < matriz.length; i++) {
+    suma_fila.push(sumatoria(matriz[i]));
   }
 
-  suma = 0;
-  for (j = 0; j < matriz.length; j++) {
-    for (i = 0; i < matriz[0].length; i++) {
+
+  for (let j = 0; j < matriz.length; j++) {
+    for (let i = 0; i < matriz[0].length; i++) {
       suma = suma + matriz[i][j];
     }
 
     suma_coml.push(suma);
     suma = 0;
   }
-
   let filas = "filas" + "\n";
   let columna = "columnas" + "\n";
 
@@ -186,6 +144,7 @@ function sumarFilasYColumnas(matriz) {
     columna = columna + element + "\n";
   });
   return filas + columna;
+
 }
 
 function multiplo(tamano, multiplo) {
@@ -197,48 +156,5 @@ function multiplo(tamano, multiplo) {
 
   return arr;
 }
-
-let a = [2, 5, 2, 4, 1];
-let matriz = [
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4, 5],
-  [1, 2, 3, 4, 5],
-];
-
-//console.log(mayorMenor(a));
-//console.log(StringArray("1,2,3,4,5,6"))
-//console.log(multiplo(a))
-//console.log(valorMedio(11))
-//console.log(multiplo(8,4))
-//console.log(sumarFilasYColumnas(matriz));
-
-
-
-
-var aray = Array();
-
-for (let i = 0; i < 9; i++) {
-
-  aray.push(Math.floor(Math.random() * 20));
-
-}
-
-
-
-//console.log("soy el array "+aray)
-//console.log(implimir())
-//console.log(media())
-//console.log(buscarIndice(6));
-//console.log(notas(aray))
-//console.log(mayorMenor(aray))
-
-
-
-//const array1 = [1, 3, 2];
-//console.log(Math.max(...array1));
-//var numeros = [3,6,67,6,23,11,100,8,93,9,17,24,7,2,33,45,28,33,23,12,99,100];
-//console.log(Math.min(...numeros))
 
 
