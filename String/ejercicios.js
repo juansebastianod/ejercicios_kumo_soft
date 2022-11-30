@@ -54,33 +54,14 @@ function convertirPalabra(nombre) {
     return nuevo;
   }
   
-  function fecha(dia,mes,anio) {
-  
-  
-  
-    let meses = [
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre",
-    ];
-  
-    return (
-      "usted nacio el dia " +
-      dia +
-      " del mes " +
-      meses[mes - 1] +
-      " del año " +
-      anio
-    );
+  function fecha(fecha) {
+   
+    
+
+    let res = fecha.split('/');
+
+
+    console.log(`Fecha de nacimiento: ${res[0]} de ${res[1]} de ${res[2]}`);
   }
   
   //8
@@ -115,4 +96,4 @@ function convertirPalabra(nombre) {
   
     return "no es capicua";
   }
-  console.log(fecha(32, 5, 2020));
+  
