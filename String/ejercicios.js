@@ -64,7 +64,7 @@ function convertirPalabra(nombre) {
     console.log(`Fecha de nacimiento: ${res[0]} de ${res[1]} de ${res[2]}`);
   }
   
-  //8
+  
   function prodcutos(producto) {
     let arr = producto.split(",");
   
@@ -77,14 +77,15 @@ function convertirPalabra(nombre) {
     return palabras;
   }
   
-  //9
+  
   function contarPalabra(oracion) {
     let arr = oracion.split(" ");
   
     return arr.length;
   }
   
-  //10
+  
+  
   function capicua(palabra) {
     let arr = palabra.split("");
     arr.reverse();
@@ -96,4 +97,6 @@ function convertirPalabra(nombre) {
   
     return "no es capicua";
   }
+
+
   
